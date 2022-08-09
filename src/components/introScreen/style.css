@@ -1,0 +1,16 @@
+:root {
+    --background: aliceblue;
+    --foreground: rgb(126, 0, 0);
+    --dark: rgb(31, 18, 37);
+    --light: rgb(164, 199, 164);
+    --font: sans-serif;
+}
+
+.about {
+    background-color: var(--light);
+    font-family: var(--font);
+    border: 3px solid var(--dark);
+    border-radius: 15px;
+    width: 700px;
+    height: 500px;
+}

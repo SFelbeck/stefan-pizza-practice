@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import Navbar from './components/navbar/index';
+
+import IntroPage from "./components/introScreen/index";
+import Menu from './components/menu';
+import OrderMenu from './components/orderMenu';
+import Toppings from './components/toppings';
+import PzaSize from './components/pizzaSize';
+import Addons from './components/additionalItems';
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<IntroPage />} />
+      <Route path="/Menu" element={<Menu />} />
+      <Route path="/OrderMenu" element={<OrderMenu />} />
+      <Route path="/Toppings" element={<Toppings />} />
+      <Route path="/pzaSize" element={<PzaSize />} />
+      <Route path="/Addons" element={<Addons />} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
