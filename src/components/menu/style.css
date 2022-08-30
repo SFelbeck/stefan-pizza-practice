@@ -6,8 +6,14 @@
     --font: sans-serif;
 }
 
-.header {
-    height: 100px;
-    width: 100%;
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px;
+    padding: 10px;
+    background-color: var(--light);
+}
+
+.pizza-choice {
     background-color: var(--foreground);
 }

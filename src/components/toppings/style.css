@@ -6,8 +6,8 @@
     --font: sans-serif;
 }
 
-.header {
-    height: 100px;
-    width: 100%;
-    background-color: var(--foreground);
+.toppings {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px;
 }
