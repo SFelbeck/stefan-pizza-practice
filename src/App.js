@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import Navbar from './components/navbar/index';
+import Header from './components/header/index';
 
 import IntroPage from "./components/introScreen/index";
 import Menu from './components/menu';
@@ -18,7 +18,7 @@ import {
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
+    <Header />
     <Routes>
       <Route path="/" element={<IntroPage />} />
       <Route path="/Menu" element={<Menu />} />
