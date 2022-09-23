@@ -1,29 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Menu() {
+    const [items] = useState([
+        {
+            name: 'Pepperoni',
+            cost: '$22.30',
+            image: 'http://placekitten.com/200/200'
+        },
+        {
+            name: 'Four Cheese',
+            cost: '$20.00',
+            image: 'http://placekitten.com/200/200'
+        },
+        {
+            name: 'Pesto',
+            cost: '$25.80',
+            image: 'http://placekitten.com/200/200'
+        },
+        {
+            name: 'Seafood',
+            cost: '$30.00',
+            image: 'http://placekitten.com/200/200'
+        }
+    ])
+
     return(
-        <section id="menu" classname="menu">
+        <section id="menu" className="menu">
             <h1 classname="menu-header">Menu</h1>
 
-            <section id="pepperoni" className="pizza-choice">
-                <img src='http://placekitten.com/200/200' alt="pepperoni"/>
-                <h3>Pepperoni</h3>
-            </section>
-
-            <section id="four-cheese" className="pizza-choice">
-                <img src='http://placekitten.com/200/200' alt="cheese pizza"/>
-                <h3>Four Cheese</h3>
-            </section>
-
-            <section id="pesto" className="pizza-choice">
-                <img src="http://placekitten.com/200/200" alt="pesto Pizza"/>
-                <h3>Pesto</h3>
-            </section>
-
-            <section id="seafood" className="pizza-choice">
-                <img src="http://placekitten.com/200/200" alt="seafood Pizza"/>
-                <h3>Seafood</h3>
-            </section>
+            <div className='items'>
+            {items.map((item, idx) => (
+                    <div className='item' key={idx}>
+                        <img src={item.image} alt={item.name} />
+                        <h3>{item.name}</h3>
+                        <h4>{item.cost}</h4>
+                    </div>
+            ))}
+            </div>
         </section>
     )
 }

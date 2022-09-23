@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 export default function OrderMenu() {
+    const [cart, setCart] = useState([]);
+
     const [products] = useState([
         {
             name: 'Pepperoni',
@@ -23,19 +25,26 @@ export default function OrderMenu() {
             image: 'http://placekitten.com/200/200'
         }
     ])
-    return(
-        <section id="OrderMenu" classname="OrderMenu">
 
-            <h1 classname="order-header">What Kind of Pizza Would You Like?</h1>
-            {products.map((product) => (
-                <div>
-                    <img src={product.image} alt={product.name} />
-                    <h3>{product.name}</h3>
-                    <h4>{product.cost}</h4>
-                    <button>Add to Cart</button>
-                </div>
-            ))}
-            <a href="/Toppings"><button classname="byoBtn">Build Your Own</button></a>
+    const addToCart = (product) => {
+        setCart([...cart, product]);
+    };
+
+    return(
+        <section id="OrderMenu" className="order-menu">
+
+            <h1 className="order-header">What Kind of Pizza Would You Like?</h1>
+            <div className='products'>
+                {products.map((product, index) => (
+                    <div className='product' key={index}>
+                        <img src={product.image} alt={product.name} />
+                        <h3>{product.name}</h3>
+                        <h4>{product.cost}</h4>
+                        <button onClick={() => addToCart(product)}>Add to Cart</button>
+                    </div>
+                ))}
+            </div>
+            <a href="/Toppings"><button className="byo-btn">Build Your Own</button></a>
         </section>
     )
 }

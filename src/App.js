@@ -8,6 +8,7 @@ import OrderMenu from './components/orderMenu';
 import Toppings from './components/toppings';
 import PzaSize from './components/pizzaSize';
 import Addons from './components/additionalItems';
+import Cart from './components/cart';
 
 import {
   BrowserRouter,
@@ -26,6 +27,7 @@ function App() {
       <Route path="/Toppings" element={<Toppings />} />
       <Route path="/pzaSize" element={<PzaSize />} />
       <Route path="/Addons" element={<Addons />} />
+      <Route path="/Cart" element={<Cart />} />
     </Routes>
     </BrowserRouter>
   );
